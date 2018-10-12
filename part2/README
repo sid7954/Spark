@@ -1,0 +1,26 @@
+PART-2 README
+
+-Install Apache Hadoop and Apace Spark and esure that they are running.
+
+- Run the run.sh script from this directory [Our run.sh assumes that Spark is added to path and hence we directly use the spark-submit command]
+
+bash run.sh <Master Spark URL with port> <Spark Local Directory specified as spark.local.dir> <HDFS source for csv file> <HDFS location of output folder>
+
+
+<Master Spark URL with port>  
+Example : spark://128.104.222.133:7077
+
+<Spark Local Directory specified as spark.local.dir>   
+Example : "spark.local.dir=/data/spark"
+
+<HDFS source for csv file> 
+Example : hdfs://128.104.222.133:9000/exports.csv 
+
+<HDFS location of output folder> 
+Example : hdfs://128.104.222.133:9000/part2     
+[The final file will be named part-00000 inside the folder name provided as this argument]
+
+
+An example run of run.sh is as follows:
+
+bash run.sh spark://128.104.222.133:7077 "spark.local.dir=/data/spark" hdfs://128.104.222.133:9000/exports.csv hdfs://128.104.222.133:9000/part2
